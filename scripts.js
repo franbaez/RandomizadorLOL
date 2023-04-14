@@ -45,8 +45,6 @@ const getRandomPokemon = async () => {
 
 randomButton.addEventListener('click', getRandomPokemon);
 
-
-
-
+ñ
 
 
