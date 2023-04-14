@@ -1,7 +1,22 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); 
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+}
+
+.header {
+  background-color: #f44336;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
 nav {
-    background-color: #2532eb;
-    display: flex;
-    align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
 }
       
 nav img {
@@ -9,53 +24,38 @@ nav img {
     margin-left: 60px;
     }
       
-ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 50px;
-    padding: 0;
-    list-style: none;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
     }
       
 li {
-    border: 2px solid rgb(253, 253, 253);
-    margin: 0px 25px;
-    font-size: 15px;
+  margin: 0 20px;
     }
       
-a {
-    display: block;
-    padding: 10px 15px;
-    color: #fff;
-    text-decoration: none;
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
     }
      
-/* Defino la animación de pulso y respiración */
-@keyframes pulsebreathe {
-    0% {
-      transform: scale(1);
-      box-shadow: none;
-    }
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 0 0 5px rgba(30, 32, 30, 0.5);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: none;
-    }
-  }    
+nav a:hover {
+    color: #f44336;
+  } 
 
 nav ul li:hover {
-    animation: pulsebreathe 1s ease-out infinite;
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
 }
 
 .card {
     width: 650px;
-    background-color: rgba(124, 119, 119, 0.164);
+    background-color: rgba(223, 102, 102, 0.842);
     border-radius: 30px;
-    border: 2px solid rgba(214, 10, 10, 0.938);
+    border: 3px solid rgb(14, 13, 13);
     z-index: 1;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -72,54 +72,77 @@ nav ul li:hover {
 
 
   .image-container {
-    width: 100%;
-    height: 220px;
     overflow: hidden;
     display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  animation: SlowFloat 1.5s infinite alternate;
-
+    align-items: start; 
+    justify-content: left; 
+    
+    margin-left: 25px;
+    margin-top: 10px;
   }
   
   .image-container img {
     margin-top: 20px;
-    width: 30%;
+    width: 33%;
     height: auto;
     opacity: 1;
+    animation: SlowFloat 1.5s infinite alternate;
     transition: opacity 0.5s ease-in-out;
+    border: 5px solid black;
+    border-radius: 40px;
+    background-color: #f2f2f2;
   }
 
   .info-container {
     padding: 16px;
   }
   
-  .name {
-    margin-top: 0;
-    display:flex;
-    justify-content: center;
+  .image-container{
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 35px;
+    padding: 10px;
   }
-  
-  .number {
-    margin-bottom: 8px;
+
+  .nombre p{
+    display: inline-block;
+    margin: auto;
+    padding: 0;
+    margin-left: 50px;
+    font-size: 1.5em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
     font-weight: bold;
-    display:flex;
-    justify-content: center;
+    border: 5px solid black;
+    background-color: #f2f2f2;
   }
-  
+
+  .number{
+    margin-left: 0px;
+  }
+
   .type {
     margin: 0;
     display:flex;
     justify-content: center;
+    border: 5px solid black;
+    background-color: #f2f2f2;
+
   }
   
-  .card p.height, p.weight, p.description {
+  .description{
+    font-size: 10px;
+  }
+  .card p.height, p.weight {
     font-size: 16px;
     font-weight: bolder;
     margin: 0;
     margin-bottom: 8px;
     display: flex;
     justify-content: center;
+    border: 5px solid black;
+    background-color: #f2f2f2;
+
   }
   #button-container {
     display: block; /* asegurarse de que el elemento sea un bloque */
