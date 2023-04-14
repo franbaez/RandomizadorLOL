@@ -31,7 +31,7 @@ const getRandomPokemon = async () => {
 
   name.textContent = pokemonData.name.toUpperCase();
   number.textContent = `#${pokemonData.id.toString().padStart(3, '0')}`;
-  type.textContent = `Type: ${pokemonData.types.map(type => type.type.name).join(', ')}`;
+  type.textContent = `Tipo: ${pokemonData.types.map(type => type.type.name).join(', ')}`;
   height.textContent = `Altura: ${pokemonData.height/10}m`;
   weight.textContent = `Peso: ${pokemonData.weight/10}kg`;
   const descriptionEntry = speciesData.flavor_text_entries.find(entry => entry.language.name === "es");

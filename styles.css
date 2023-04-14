@@ -52,7 +52,7 @@ nav ul li:hover {
 }
 
 .card {
-    width: 650px;
+    width: 735px;
     background-color: rgba(223, 102, 102, 0.842);
     border-radius: 30px;
     border: 3px solid rgb(14, 13, 13);
@@ -64,90 +64,88 @@ nav ul li:hover {
     margin: 0 auto;
     margin-bottom: 20px;
   }
-  
+
 @keyframes SlowFloat {
   0% { transform: translateY(0);}
   100% { transform: translateY(-10px);}
 }
 
 
-  .image-container {
+  .top-container {
     overflow: hidden;
     display: flex; 
     align-items: start; 
     justify-content: left; 
-    
     margin-left: 25px;
     margin-top: 10px;
   }
   
-  .image-container img {
-    margin-top: 20px;
-    width: 33%;
-    height: auto;
-    opacity: 1;
-    animation: SlowFloat 1.5s infinite alternate;
-    transition: opacity 0.5s ease-in-out;
-    border: 5px solid black;
-    border-radius: 40px;
-    background-color: #f2f2f2;
-  }
-
-  .info-container {
-    padding: 16px;
-  }
-  
-  .image-container{
+  .top-container{
     width: 100%;
     margin-top: 20px;
     margin-left: 35px;
     padding: 10px;
   }
 
-  .nombre p{
-    display: inline-block;
-    margin: auto;
-    padding: 0;
-    margin-left: 50px;
+  .image-container{
+    margin-top: 20px;
+    width: 210px;
+    height: 210px;
+    border: 5px solid black;
+    border-radius: 40px;
+    background-color: #f2f2f2;
+  }
+
+ .image-container img{
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+    animation: SlowFloat 1.5s infinite alternate;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .info-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px ;
+  }
+
+  .first-data, .second-data{
+    display: flex;
+  }
+  
+  .height, .weight, .type{
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 5px;
+    border: 5px solid black;
+    background-color: #f2f2f2;
+  }
+  .name, .number{
+    margin-right: 30px;
+    padding: 5px;
     font-size: 1.5em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
     font-weight: bold;
     border: 5px solid black;
     background-color: #f2f2f2;
   }
-
-  .number{
-    margin-left: 0px;
-  }
-
-  .type {
-    margin: 0;
-    display:flex;
-    justify-content: center;
-    border: 5px solid black;
-    background-color: #f2f2f2;
-
-  }
   
-  .description{
-    font-size: 10px;
-  }
-  .card p.height, p.weight {
-    font-size: 16px;
-    font-weight: bolder;
-    margin: 0;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: center;
+   .description{
+    text-align: center;
+    width: 65%;
+    padding: 10px;
+    font-size: 15px;
     border: 5px solid black;
     background-color: #f2f2f2;
-
   }
+
+  
   #button-container {
-    display: block; /* asegurarse de que el elemento sea un bloque */
-    margin: 0 auto; /* centrar horizontalmente el bloque */
-    width: 50%; /* establecer el ancho del bloque */
+    display: block;
+    margin-top: 100px;
+     
+    width: 50%; 
   }
   
   
