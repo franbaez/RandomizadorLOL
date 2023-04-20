@@ -20,14 +20,14 @@ const fetchData = async (url) => {
 };
 
 const getRandomPokemon = async () => {
-  const randomId = Math.floor(Math.random() * 898) + 1;
+  const kantoUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
+  const kantoData = await fetchData(kantoUrl);
+  const randomId = Math.floor(Math.random() * kantoData.results.length) + 1;
   const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${randomId}`;
-  const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${randomId}`;
 
-  const [pokemonData, speciesData] = await Promise.all([
-    fetchData(pokemonUrl),
-    fetchData(speciesUrl)
-  ]);
+  const pokemonData = await fetchData(pokemonUrl);
+  const speciesUrl = pokemonData.species.url;
+  const speciesData = await fetchData(speciesUrl);
 
   name.textContent = pokemonData.name.toUpperCase();
   number.textContent = `#${pokemonData.id.toString().padStart(3, '0')}`;
@@ -44,7 +44,3 @@ const getRandomPokemon = async () => {
 };
 
 randomButton.addEventListener('click', getRandomPokemon);
-
-
-
-

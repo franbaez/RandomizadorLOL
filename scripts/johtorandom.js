@@ -1,3 +1,15 @@
+const fetchJohtoPokemon = async () => {
+    const response = await fetch('https://pokeapi.co/api/v2/generation/2/');
+    const data = await response.json();
+    const johtoPokemon = data.pokemon_species.map(pokemon => ({
+      id: pokemon.url.split('/')[6],
+      name: pokemon.name
+    }));
+    return johtoPokemon;
+    
+  }
+  
+  
 const randomButton = document.querySelector('.random-button');
 const card = document.querySelector('.card');
 const name = card.querySelector('.name');
@@ -9,25 +21,25 @@ const weight = card.querySelector('.weight');
 const description = card.querySelector('.description');
 image.style.opacity = 1;
 
-const fetchData = async (url) => {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+const fetchPokemonData = async (id) => {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+  const data = await response.json();
+  return data;
 };
 
-const getRandomPokemon = async () => {
-  const randomId = Math.floor(Math.random() * 898) + 1;
-  const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${randomId}`;
-  const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${randomId}`;
+const fetchSpeciesData = async (id) => {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`);
+  const data = await response.json();
+  return data;
+};
 
-  const [pokemonData, speciesData] = await Promise.all([
-    fetchData(pokemonUrl),
-    fetchData(speciesUrl)
-  ]);
+const getRandomJohtoPokemon = async () => {
+  const johtoPokemon = await fetchJohtoPokemon();
+  const randomIndex = Math.floor(Math.random() * johtoPokemon.length);
+  const randomPokemon = johtoPokemon[randomIndex];
+  
+  const pokemonData = await fetchPokemonData(randomPokemon.id);
+  const speciesData = await fetchSpeciesData(randomPokemon.id);
 
   name.textContent = pokemonData.name.toUpperCase();
   number.textContent = `#${pokemonData.id.toString().padStart(3, '0')}`;
@@ -43,8 +55,4 @@ const getRandomPokemon = async () => {
   image.style.opacity = 1;
 };
 
-randomButton.addEventListener('click', getRandomPokemon);
-
-
-
-
+randomButton.addEventListener('click', getRandomJohtoPokemon);
