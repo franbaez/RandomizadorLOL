@@ -9,7 +9,6 @@ const pokeDescription = document.querySelector('.poke-description');
 const pokeStats = document.querySelector('.poke-stats');
 const pokeWeight = document.querySelector('.poke-weight');
 const pokeHeight = document.querySelector('.poke-height');
-const pokeEvolution = document.querySelector('.poke-evolution');
 
 //Creo una constante con los colores que se le asignaran a cada tipo de pokemon
 const typeColors = {
@@ -71,7 +70,7 @@ const renderPokemonTypes = types => {
   types.forEach(type => {
     const typeTextElement = document.createElement("div");
     typeTextElement.style.color = typeColors[type.type.name];
-    typeTextElement.textContent = type.type.name;
+    typeTextElement.textContent = type.type.name.toUpperCase();
     pokeTypes.appendChild(typeTextElement);
   });
 }
@@ -83,7 +82,7 @@ const renderPokemonStats = stats => {
     const StatElement = document.createElement("div");
     const StatElementName = document.createElement("div");
     const StatElementAmount = document.createElement("div");
-    StatElementName.textContent = stat.stat.name;
+    StatElementName.textContent = stat.stat.name.toUpperCase();
     StatElementAmount.textContent = stat.base_stat;
     StatElement.appendChild(StatElementName);
     StatElement.appendChild(StatElementAmount);

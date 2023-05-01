@@ -53,34 +53,98 @@ nav ul li:hover {
   transition: transform 0.2s ease-in-out;
 }
 
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .poke-card{
   width: 22rem;
-  height: 40rem;
+  height: 36rem;
   background-color: aquamarine;
   border-radius: 8px;
   padding: 0.2rem;
 }
 
+.name-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 25px;
+}
 .image-container{
   height: 35%;
   display: flex;
   justify-content: center;
+  margin-bottom: 0.5rem;
 }
 
 .poke-img{
   width: 200px;
   height: 200px;
-  transform: translateY(5rem);
+  background-image: url(/assets/fondo-pokedex.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+  border: 3px solid gray;
+  box-shadow: 3px 3px 3px 3px #83B2B2;
 }
 .data-container{
   background-color: white;
-  height: 58%;
+  height: 51%;
   border-radius: 6px;
 }
-.poke-types, .poke-description, .poke-stats, .poke-weight, .poke-height{
-border: 1px solid black;
-display: flex;
-justify-content: center;
-align-items: center;
+.poke-types{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
 } 
+.poke-types div{
+  background-color: rgb(9, 9, 56);
+  padding: 0.33rem;
+  border-radius: 20px;
+  font-size: larger;
+  font-weight: bolder;
+}
 
+.poke-description{
+background-color: #6a9292;
+width: 75%;
+margin-left: 12%;
+padding: 8px;
+border-radius: 10px;
+}
+
+
+.poke-data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.poke-height, .poke-weight{
+  padding-top: 1rem;
+  background-color: rgb(80, 80, 216);
+  padding: 0.33rem;
+  border-radius: 20px;
+  margin: 1rem;  
+  text-align: center;
+  width: 35%;
+  
+} 
+ .poke-stats{
+  width: 80%;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  background-color: darkslateblue;
+  border: 2px solid blue;
+  padding: 0.2rem;
+ }
+.poke-stats div{
+  display: flex;
+  justify-content: space-between;
+  
+ }
+ 
