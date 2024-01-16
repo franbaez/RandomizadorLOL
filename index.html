@@ -2,67 +2,60 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeRandomizer</title>
-    <link rel="stylesheet" href="css/styles.css">
-    
+    <title>Pokédex App</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
-<body>
-    <header>
-      <nav>
-        <a href="index.html">
-            <img src="assets/icon pokeball.png" alt="Logo de Pokeball">
-        </a>
-        
-        <ul>
-          <li><a href="pages/kanto.html">Kanto</a></li>
-          <li><a href="pages/johto.html">Johto</a></li>
-          <li><a href="pages/hoenn.html">Hoenn</a></li>
-          <li><a href="pages/sinnoh.html">Sinnoh</a></li>
-          <li><a href="pages/teselia.html">Teselia</a></li>
-          <li><a href="pages/kalos.html">Kalos</a></li>
-          <li><a href="pages/alola.html">Alola</a></li>
-          <li><a href="pages/galar.html">Galar</a></li>
-          <li><a href="pages/paldea.html">Paldea</a></li>
-        </ul>
-      </nav>
-    </header>
-  
-        <form action="" onsubmit="searchPokemon(event)">
-          <input type="text" name="pokemon" autocomplete="off">
-        </form>  
-        
-        <div class="card-container">
-          <div class="poke-card">
-            <div class="name-container">
-              <div class="poke-name">Pokedex</div>
-              <div class="poke-id"></div>
-            </div>
-            
-            <div class="image-container">
-              <img src="assets/poke-shadow.png" alt="" class="poke-img">
-            </div>
-            <div class="poke-types"></div>
-            <div class="data-container">
-              
-              <div class="poke-data">
-                <div class="poke-weight"></div>
-                <div class="poke-height"></div>
-              </div>
-              
-              <div class="poke-description"></div>
-              <div class="poke-stats"></div>
-              
-            </div>
+
+<body class="bg-dark">
+    <div class="col-md-12 mt-3">
+        <div class="search-container bg-danger text-white">
+            <label for="pokemonSearch">Buscar Pokémon por número o nombre:</label>
+            <div class="input-group">
+                <input type="text" id="pokemonSearch" class="form-control" placeholder="Número o nombre">
+                <button id="searchButton" class="btn btn-success">Buscar</button>
+                <button id="randomPokemonButton" class="btn btn-secondary">Obtener Pokémon Aleatorio</button>
             </div>
         </div>
-        
+    </div>
+  <div class="container">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card w-50 mx-auto my-5 bg-danger text-white border-white border-2 shadow-lg">
+                <div class="card-body d-flex "> 
+                    <div class="card-img-container">
+                        <img src="assets/poke-shadow.png" class="card-img-top" alt="Pokemon Image" id="pokemonImage">
+                    </div>
+                    <div class="info-pkm invisible">
+                        <button class="btn-primary">☆</button>
+                        <p class="card-text text-center" id="pokemonNumber"></p>
+                        <h5 class="card-title text-center" id="pokemonName"></h5>
+                        <p class="card-text bg-dark bg-gradient" id="pokemonDescription"></p>
+                        <div id="pokemonEvolutions" class="d-flex flex-wrap justify-content-center bg-dark bg-gradient"></div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            <div class="equipo invisible">
+                <div class="team-list w-50 mx-auto my-5"></div>
+                <div class="btn-borrar">
+                    <button class="btn-danger" onclick="clearTeam()">Limpiar</button>
+    
+                </div>
+            </div>
+        </div>
+    </div>
 
-      
 
-      
-      <script src="js/scripts.js"></script>
+</div>
+  <script src="/js/scripts.js"></script>
+  <script src="/js/pokemon.js"></script>
+  <script src="/js/equipo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 </html>
-

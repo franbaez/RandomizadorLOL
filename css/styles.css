@@ -1,150 +1,105 @@
-/* Fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); 
 
-*{
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #83B2B2;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
+.search-container {
+    background-color: aqua;
+    text-align: center;
+    padding: 1rem;
 }
 
-nav {
-  background-color: #6a9292;
-  padding: 10px 0;
-  display: flex;
-}
-      
-nav img {
-    height: 80px;
-    margin-top: 20px;
-    margin-left: 40px;
-    }
-      
-nav ul {
-  list-style: none;
-  margin-top: 40px;
-  margin-left: 60px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-    }
-      
-li {
-  margin: 0 20px;
-    }
-      
-nav a {
-  color: #333;
-  text-decoration: none;
-  font-size: 20px;
-    }
-     
-nav a:hover {
-    color: #f8f1f1;
-  } 
-
-nav ul li:hover {
-  transform: scale(1.2);
-  transition: transform 0.2s ease-in-out;
+#pokemonImage {
+    max-width: 95%;
+    min-width: 95%;
+    height: auto;
+    border: solid black 3px;
+    background-image: url(/assets/fondo-pokedex.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.card-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.poke-card{
-  width: 22rem;
-  height: 36rem;
-  background-color: aquamarine;
-  border-radius: 8px;
-  padding: 0.2rem;
+#pokemonEvolutions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    border: solid black 3px;
 }
 
-.name-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  font-size: 25px;
-}
-.image-container{
-  height: 35%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
+.evolution-container {
+    text-align: center;
 }
 
-.poke-img{
-  width: 200px;
-  height: 200px;
-  background-image: url(/assets/fondo-pokedex.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 15px;
-  border: 3px solid gray;
-  box-shadow: 3px 3px 3px 3px #83B2B2;
-}
-.data-container{
-  background-color: white;
-  height: 51%;
-  border-radius: 6px;
-}
-.poke-types{
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-} 
-.poke-types div{
-  background-color: rgb(9, 9, 56);
-  padding: 0.33rem;
-  border-radius: 20px;
-  font-size: larger;
-  font-weight: bolder;
+.evolution-container img {
+    max-width: 100%;
+    height: auto;
 }
 
-.poke-description{
-background-color: #6a9292;
-width: 75%;
-margin-left: 12%;
-padding: 8px;
-border-radius: 10px;
+.evolution-container p {
+    text-align: center;
+    margin: 0.5rem;
 }
 
-
-.poke-data{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+.card-body {
+    display: flex;
+    align-items: center;
+    padding: 1rem; 
 }
-.poke-height, .poke-weight{
-  padding-top: 1rem;
-  background-color: rgb(80, 80, 216);
-  padding: 0.33rem;
-  border-radius: 20px;
-  margin: 1rem;  
-  text-align: center;
-  width: 35%;
-  
-} 
- .poke-stats{
-  width: 80%;
-  margin-top: 0.5rem;
-  margin-left: 2rem;
-  background-color: darkslateblue;
-  border: 2px solid blue;
-  padding: 0.2rem;
- }
-.poke-stats div{
-  display: flex;
-  justify-content: space-between;
-  
- }
- 
+
+.pokemon-info, #pokemonDescription {
+    border: solid black 3px;
+    flex: 1; 
+    color: #FCF9EC
+}
+
+#pokemonNumber, #pokemonName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 1rem; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card .btn-primary {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+.team-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 55%;
+    min-width: 50%;
+    border: solid #FCF9EC 3px;
+    background-color: crimson;
+}
+.text-white{
+    margin-right: 20px;
+}
+
+li{
+    list-style: none;
+}
+.pokemon-sprite{
+    width: 65px;
+    height: 65px;
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 15px;
+}
+
+.btn-danger {
+    width: 100px;
+    height: 30px;
+    margin: 0;
+}
+
+.btn-borrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+  }
